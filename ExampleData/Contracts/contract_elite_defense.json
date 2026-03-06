@@ -1,0 +1,40 @@
+{
+  "contractId": "contract_elite_defense",
+  "displayName": "Elite Facility Defense",
+  "description": "A high-security government facility requires elite-level drone defense coverage. Multiple threat vectors, extended duration, and zero-failure tolerance make this our most demanding contract.",
+  "contractType": "Defense",
+  "difficulty": "Elite",
+  "requiredDroneTypes": ["guardian_mk2", "sentinel_pro"],
+  "requiredDroneCount": 5,
+  "minimumReputationLevel": 3,
+  "requiredTechnologies": ["energy_fusion_microcell", "advanced_capacitors"],
+  "durationSeconds": 3600,
+  "hasDeadline": true,
+  "deadlineSeconds": 3600,
+  "baseReward": 25000,
+  "reputationReward": 10,
+  "researchPointsReward": 1500,
+  "bonusUnlocks": ["quantum_core", "military_contracts"],
+  "failurePenalty": 10000,
+  "reputationLossOnFail": 5,
+  "minimumSuccessChance": 0.8,
+  "statRequirements": [
+    {
+      "statName": "armor",
+      "minimumValue": 70
+    },
+    {
+      "statName": "reliability",
+      "minimumValue": 80
+    },
+    {
+      "statName": "signalStrength",
+      "minimumValue": 75
+    },
+    {
+      "statName": "batteryCapacity",
+      "minimumValue": 70
+    }
+  ],
+  "contractColor": {"r": 1.0, "g": 0.2, "b": 0.2, "a": 1.0}
+}

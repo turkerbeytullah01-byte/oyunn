@@ -1,0 +1,21 @@
+{
+  "researchId": "energy_basic_power_cell",
+  "displayName": "Basic Power Cell",
+  "description": "Standard lithium-ion power cells provide reliable energy storage for entry-level drones. This foundational technology enables basic flight operations and system functionality.",
+  "category": "Energy",
+  "researchPointsRequired": 500,
+  "moneyRequired": 1000,
+  "researchTimeSeconds": 300,
+  "prerequisiteResearch": [],
+  "requiredReputationLevel": 0,
+  "unlocksTechnologies": ["energy_efficient_cooling"],
+  "unlocksDrones": ["scout_x1"],
+  "statModifiers": [
+    {
+      "statName": "batteryCapacity",
+      "modifierValue": 1.1,
+      "modifierType": "Multiplicative"
+    }
+  ],
+  "researchColor": {"r": 0.2, "g": 0.6, "b": 1.0, "a": 1.0}
+}

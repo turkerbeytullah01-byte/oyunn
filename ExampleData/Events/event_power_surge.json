@@ -1,0 +1,63 @@
+{
+  "eventId": "event_power_surge",
+  "displayName": "Power Surge",
+  "description": "A power surge has affected your production facility. Some equipment may be damaged.",
+  "flavorText": "The lights flicker, then go dark. When they return, the smell of ozone fills the air. Your facility manager is already assessing the damage.",
+  "category": "Negative",
+  "baseTriggerChance": 0.05,
+  "cooldownSeconds": 3600,
+  "prerequisiteEvents": [],
+  "blockedByEvents": [],
+  "minimumReputationLevel": 0,
+  "maximumReputationLevel": 100,
+  "isTimed": false,
+  "currencyReward": 0,
+  "researchPointsReward": 0,
+  "reputationReward": 0,
+  "unlocksTechnologies": [],
+  "unlocksDrones": [],
+  "currencyPenalty": 2000,
+  "researchPointsPenalty": 0,
+  "reputationPenalty": 0,
+  "productionDelaySeconds": 300,
+  "locksTechnologies": [],
+  "choices": [
+    {
+      "choiceId": "install_protectors",
+      "choiceText": "Install Surge Protectors",
+      "outcomeDescription": "Invest in protection to prevent future incidents.",
+      "currencyEffect": -3000,
+      "researchPointsEffect": 0,
+      "reputationEffect": 0,
+      "unlocks": ["power_protection"],
+      "triggersEvent": [],
+      "requiredCurrency": 3000,
+      "requiredTechnologies": []
+    },
+    {
+      "choiceId": "repair_only",
+      "choiceText": "Repair Only",
+      "outcomeDescription": "Fix the immediate damage without additional investment.",
+      "currencyEffect": -1000,
+      "researchPointsEffect": 0,
+      "reputationEffect": 0,
+      "unlocks": [],
+      "triggersEvent": [],
+      "requiredCurrency": 1000,
+      "requiredTechnologies": []
+    },
+    {
+      "choiceId": "insurance_claim",
+      "choiceText": "File Insurance Claim",
+      "outcomeDescription": "Claim insurance to offset costs.",
+      "currencyEffect": 500,
+      "researchPointsEffect": 0,
+      "reputationEffect": -1,
+      "unlocks": [],
+      "triggersEvent": [],
+      "requiredCurrency": 0,
+      "requiredTechnologies": []
+    }
+  ],
+  "eventColor": {"r": 0.9, "g": 0.9, "b": 0.2, "a": 1.0}
+}

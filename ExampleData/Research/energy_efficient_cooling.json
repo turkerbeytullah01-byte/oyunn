@@ -1,0 +1,26 @@
+{
+  "researchId": "energy_efficient_cooling",
+  "displayName": "Efficient Cooling Systems",
+  "description": "Advanced thermal management systems reduce heat buildup during extended operations, improving battery life and preventing thermal shutdowns in demanding conditions.",
+  "category": "Energy",
+  "researchPointsRequired": 1200,
+  "moneyRequired": 2500,
+  "researchTimeSeconds": 600,
+  "prerequisiteResearch": ["energy_basic_power_cell"],
+  "requiredReputationLevel": 0,
+  "unlocksTechnologies": ["energy_advanced_capacitors"],
+  "unlocksDrones": [],
+  "statModifiers": [
+    {
+      "statName": "heatDissipation",
+      "modifierValue": 1.2,
+      "modifierType": "Multiplicative"
+    },
+    {
+      "statName": "powerEfficiency",
+      "modifierValue": 1.1,
+      "modifierType": "Multiplicative"
+    }
+  ],
+  "researchColor": {"r": 0.3, "g": 0.7, "b": 1.0, "a": 1.0}
+}

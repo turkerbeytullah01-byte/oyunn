@@ -1,0 +1,26 @@
+{
+  "researchId": "energy_advanced_capacitors",
+  "displayName": "Advanced Capacitors",
+  "description": "High-density capacitor banks enable rapid power discharge for burst operations and improved energy buffering, significantly extending operational range.",
+  "category": "Energy",
+  "researchPointsRequired": 2500,
+  "moneyRequired": 5000,
+  "researchTimeSeconds": 900,
+  "prerequisiteResearch": ["energy_efficient_cooling"],
+  "requiredReputationLevel": 1,
+  "unlocksTechnologies": ["energy_fusion_microcell"],
+  "unlocksDrones": ["guardian_mk2"],
+  "statModifiers": [
+    {
+      "statName": "batteryCapacity",
+      "modifierValue": 1.25,
+      "modifierType": "Multiplicative"
+    },
+    {
+      "statName": "powerEfficiency",
+      "modifierValue": 1.15,
+      "modifierType": "Multiplicative"
+    }
+  ],
+  "researchColor": {"r": 0.4, "g": 0.8, "b": 1.0, "a": 1.0}
+}

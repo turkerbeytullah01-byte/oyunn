@@ -1,0 +1,31 @@
+{
+  "researchId": "energy_quantum_core",
+  "displayName": "Quantum Energy Core",
+  "description": "Experimental quantum energy extraction technology harnesses zero-point energy for unprecedented power output. The pinnacle of drone energy systems.",
+  "category": "Energy",
+  "researchPointsRequired": 20000,
+  "moneyRequired": 50000,
+  "researchTimeSeconds": 3600,
+  "prerequisiteResearch": ["energy_fusion_microcell"],
+  "requiredReputationLevel": 3,
+  "unlocksTechnologies": [],
+  "unlocksDrones": ["sentinel_pro"],
+  "statModifiers": [
+    {
+      "statName": "batteryCapacity",
+      "modifierValue": 2.0,
+      "modifierType": "Multiplicative"
+    },
+    {
+      "statName": "powerEfficiency",
+      "modifierValue": 1.5,
+      "modifierType": "Multiplicative"
+    },
+    {
+      "statName": "heatDissipation",
+      "modifierValue": 1.5,
+      "modifierType": "Multiplicative"
+    }
+  ],
+  "researchColor": {"r": 0.5, "g": 0.0, "b": 1.0, "a": 1.0}
+}

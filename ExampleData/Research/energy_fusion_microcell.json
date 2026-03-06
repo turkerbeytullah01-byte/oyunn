@@ -1,0 +1,26 @@
+{
+  "researchId": "energy_fusion_microcell",
+  "displayName": "Fusion Microcell",
+  "description": "Miniaturized fusion reactors provide near-limitless energy for high-endurance drones. This breakthrough technology represents a paradigm shift in drone power systems.",
+  "category": "Energy",
+  "researchPointsRequired": 8000,
+  "moneyRequired": 15000,
+  "researchTimeSeconds": 1800,
+  "prerequisiteResearch": ["energy_advanced_capacitors"],
+  "requiredReputationLevel": 2,
+  "unlocksTechnologies": ["energy_quantum_core"],
+  "unlocksDrones": [],
+  "statModifiers": [
+    {
+      "statName": "batteryCapacity",
+      "modifierValue": 1.5,
+      "modifierType": "Multiplicative"
+    },
+    {
+      "statName": "heatDissipation",
+      "modifierValue": 1.3,
+      "modifierType": "Multiplicative"
+    }
+  ],
+  "researchColor": {"r": 0.0, "g": 0.9, "b": 1.0, "a": 1.0}
+}

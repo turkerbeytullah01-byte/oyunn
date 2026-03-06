@@ -1,0 +1,32 @@
+{
+  "contractId": "contract_advanced_recon",
+  "displayName": "Industrial Reconnaissance",
+  "description": "A corporate client requires detailed intelligence gathering at a competitor's facility. High-quality sensor data and stealth capabilities are essential for this sensitive operation.",
+  "contractType": "Reconnaissance",
+  "difficulty": "Medium",
+  "requiredDroneTypes": ["scout_x1", "guardian_mk2"],
+  "requiredDroneCount": 3,
+  "minimumReputationLevel": 1,
+  "requiredTechnologies": ["energy_efficient_cooling"],
+  "durationSeconds": 1200,
+  "hasDeadline": true,
+  "deadlineSeconds": 1800,
+  "baseReward": 4500,
+  "reputationReward": 4,
+  "researchPointsReward": 300,
+  "bonusUnlocks": ["stealth_coating"],
+  "failurePenalty": 1500,
+  "reputationLossOnFail": 2,
+  "minimumSuccessChance": 0.65,
+  "statRequirements": [
+    {
+      "statName": "stealth",
+      "minimumValue": 50
+    },
+    {
+      "statName": "sensorQuality",
+      "minimumValue": 60
+    }
+  ],
+  "contractColor": {"r": 0.3, "g": 0.5, "b": 1.0, "a": 1.0}
+}

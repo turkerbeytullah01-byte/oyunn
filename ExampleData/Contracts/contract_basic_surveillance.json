@@ -1,0 +1,28 @@
+{
+  "contractId": "contract_basic_surveillance",
+  "displayName": "Perimeter Surveillance",
+  "description": "A local industrial facility requires basic surveillance coverage for their perimeter. Deploy drones to monitor for unauthorized access and report any suspicious activity.",
+  "contractType": "Surveillance",
+  "difficulty": "Easy",
+  "requiredDroneTypes": ["scout_x1"],
+  "requiredDroneCount": 2,
+  "minimumReputationLevel": 0,
+  "requiredTechnologies": [],
+  "durationSeconds": 600,
+  "hasDeadline": true,
+  "deadlineSeconds": 900,
+  "baseReward": 1500,
+  "reputationReward": 2,
+  "researchPointsReward": 100,
+  "bonusUnlocks": [],
+  "failurePenalty": 500,
+  "reputationLossOnFail": 1,
+  "minimumSuccessChance": 0.7,
+  "statRequirements": [
+    {
+      "statName": "detectionRange",
+      "minimumValue": 40
+    }
+  ],
+  "contractColor": {"r": 0.3, "g": 0.8, "b": 0.3, "a": 1.0}
+}

@@ -1,0 +1,51 @@
+{
+  "eventId": "event_eureka_moment",
+  "displayName": "Eureka Moment",
+  "description": "One of your researchers has made a breakthrough discovery that could accelerate your current research project.",
+  "flavorText": "Dr. Chen burst into your office, eyes wide with excitement. 'I've found it! The missing piece!' Papers scattered across your desk show complex calculations, but the conclusion is clear - a major breakthrough.",
+  "category": "Positive",
+  "baseTriggerChance": 0.05,
+  "cooldownSeconds": 3600,
+  "prerequisiteEvents": [],
+  "blockedByEvents": [],
+  "minimumReputationLevel": 0,
+  "maximumReputationLevel": 100,
+  "isTimed": false,
+  "currencyReward": 0,
+  "researchPointsReward": 500,
+  "reputationReward": 1,
+  "unlocksTechnologies": [],
+  "unlocksDrones": [],
+  "currencyPenalty": 0,
+  "researchPointsPenalty": 0,
+  "reputationPenalty": 0,
+  "productionDelaySeconds": 0,
+  "locksTechnologies": [],
+  "choices": [
+    {
+      "choiceId": "publish_findings",
+      "choiceText": "Publish Findings",
+      "outcomeDescription": "Share the discovery with the scientific community for reputation gains.",
+      "currencyEffect": 0,
+      "researchPointsEffect": 300,
+      "reputationEffect": 3,
+      "unlocks": [],
+      "triggersEvent": [],
+      "requiredCurrency": 0,
+      "requiredTechnologies": []
+    },
+    {
+      "choiceId": "keep_secret",
+      "choiceText": "Keep Secret",
+      "outcomeDescription": "Maintain competitive advantage by keeping the breakthrough internal.",
+      "currencyEffect": 0,
+      "researchPointsEffect": 800,
+      "reputationEffect": 0,
+      "unlocks": [],
+      "triggersEvent": [],
+      "requiredCurrency": 0,
+      "requiredTechnologies": []
+    }
+  ],
+  "eventColor": {"r": 1.0, "g": 0.8, "b": 0.2, "a": 1.0}
+}

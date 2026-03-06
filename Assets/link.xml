@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Link.xml for Project Aegis: Drone Dominion
+  
+  This file prevents the IL2CPP managed code stripper from removing
+  types and methods that are accessed via reflection or serialization.
+  
+  For more information:
+  https://docs.unity3d.com/Manual/ManagedCodeStripping.html
+-->
+
+<linker>
+  <!-- 
+    Core Assemblies - Preserve all to ensure critical systems work
+  -->
+  <assembly fullname="ProjectAegis.Core" preserve="all"/>
+  <assembly fullname="ProjectAegis.Systems" preserve="all"/>
+  <assembly fullname="ProjectAegis.Data" preserve="all"/>
+  <assembly fullname="ProjectAegis.Mobile" preserve="all"/>
+  
+  <!--
+    Unity Assemblies - Preserve commonly stripped types
+  -->
+  <assembly fullname="UnityEngine.CoreModule">
+    <type fullname="UnityEngine.GameObject" preserve="all"/>
+    <type fullname="UnityEngine.Transform" preserve="all"/>
+    <type fullname="UnityEngine.MonoBehaviour" preserve="all"/>
+    <type fullname="UnityEngine.ScriptableObject" preserve="all"/>
+    <type fullname="UnityEngine.Object" preserve="all"/>
+  </assembly>
+  
+  <assembly fullname="UnityEngine.UI">
+    <type fullname="UnityEngine.UI.Button" preserve="all"/>
+    <type fullname="UnityEngine.UI.Slider" preserve="all"/>
+    <type fullname="UnityEngine.UI.Text" preserve="all"/>
+    <type fullname="UnityEngine.UI.Image" preserve="all"/>
+    <type fullname="UnityEngine.UI.ScrollRect" preserve="all"/>
+  </assembly>
+  
+  <!--
+    Newtonsoft.Json (if used) - Preserve for serialization
+  -->
+  <assembly fullname="Newtonsoft.Json">
+    <type fullname="Newtonsoft.Json.JsonConvert" preserve="all"/>
+    <type fullname="Newtonsoft.Json.JsonSerializer" preserve="all"/>
+    <type fullname="Newtonsoft.Json.JsonSerializerSettings" preserve="all"/>
+  </assembly>
+  
+  <!--
+    System Libraries - Preserve commonly used types
+  -->
+  <assembly fullname="mscorlib">
+    <type fullname="System.Collections.Generic.List`1" preserve="all"/>
+    <type fullname="System.Collections.Generic.Dictionary`2" preserve="all"/>
+    <type fullname="System.DateTime" preserve="all"/>
+    <type fullname="System.TimeSpan" preserve="all"/>
+    <type fullname="System.String" preserve="all"/>
+    <type fullname="System.Int32" preserve="all"/>
+    <type fullname="System.Single" preserve="all"/>
+    <type fullname="System.Boolean" preserve="all"/>
+    <type fullname="System.Action" preserve="all"/>
+    <type fullname="System.Action`1" preserve="all"/>
+    <type fullname="System.Action`2" preserve="all"/>
+    <type fullname="System.Func`1" preserve="all"/>
+    <type fullname="System.Func`2" preserve="all"/>
+  </assembly>
+  
+  <!--
+    ScriptableObjects - Preserve all derived types
+  -->
+  <assembly fullname="Assembly-CSharp">
+    <!-- Data types accessed via reflection -->
+    <type fullname="ResearchData" preserve="all"/>
+    <type fullname="ContractData" preserve="all"/>
+    <type fullname="GameEventData" preserve="all"/>
+    <type fullname="DroneData" preserve="all"/>
+    <type fullname="TechnologyTreeData" preserve="all"/>
+    <type fullname="UITheme" preserve="all"/>
+    
+    <!-- Manager singletons -->
+    <type fullname="GameManager" preserve="all"/>
+    <type fullname="ResearchManager" preserve="all"/>
+    <type fullname="ContractManager" preserve="all"/>
+    <type fullname="SaveManager" preserve="all"/>
+    <type fullname="EventManager" preserve="all"/>
+    <type fullname="TimeManager" preserve="all"/>
+    <type fullname="IdleManager" preserve="all"/>
+    <type fullname="DynamicEventManager" preserve="all"/>
+    <type fullname="RiskManager" preserve="all"/>
+    <type fullname="ReputationManager" preserve="all"/>
+    <type fullname="PrototypeTestingManager" preserve="all"/>
+    <type fullname="DroneManager" preserve="all"/>
+    <type fullname="ProductionManager" preserve="all"/>
+    <type fullname="UIManager" preserve="all"/>
+    <type fullname="MobileInputManager" preserve="all"/>
+    <type fullname="MobileOptimizationManager" preserve="all"/>
+    
+    <!-- Save data types -->
+    <type fullname="GameSaveData" preserve="all"/>
+    <type fullname="PlayerSaveData" preserve="all"/>
+    <type fullname="ResearchSaveData" preserve="all"/>
+    <type fullname="TechTreeSaveData" preserve="all"/>
+    <type fullname="ContractsSaveData" preserve="all"/>
+    <type fullname="ProductionSaveData" preserve="all"/>
+    <type fullname="EventsSaveData" preserve="all"/>
+    <type fullname="StatisticsSaveData" preserve="all"/>
+    
+    <!-- Risk system -->
+    <type fullname="RiskProfile" preserve="all"/>
+    <type fullname="RiskModifiers" preserve="all"/>
+    <type fullname="FailureResult" preserve="all"/>
+    <type fullname="RiskLevel" preserve="all"/>
+    <type fullname="FailureType" preserve="all"/>
+    
+    <!-- Contract system -->
+    <type fullname="BidParameters" preserve="all"/>
+    <type fullname="BidResult" preserve="all"/>
+    <type fullname="ActiveContract" preserve="all"/>
+    <type fullname="ContractStatus" preserve="all"/>
+    
+    <!-- Event system -->
+    <type fullname="GameEventData" preserve="all"/>
+    <type fullname="EventEffect" preserve="all"/>
+    <type fullname="EventType" preserve="all"/>
+    <type fullname="EffectType" preserve="all"/>
+    <type fullname="ActiveEventEffect" preserve="all"/>
+    
+    <!-- Research system -->
+    <type fullname="ResearchProgress" preserve="all"/>
+    <type fullname="ResearchState" preserve="all"/>
+    <type fullname="NodeState" preserve="all"/>
+    <type fullname="TechCategory" preserve="all"/>
+    
+    <!-- UI types -->
+    <type fullname="BaseScreen" preserve="all"/>
+    <type fullname="ScreenIds" preserve="all"/>
+    <type fullname="PopupData" preserve="all"/>
+    <type fullname="PopupChoice" preserve="all"/>
+    <type fullname="NotificationType" preserve="all"/>
+    <type fullname="MobileQualityLevel" preserve="all"/>
+  </assembly>
+  
+  <!--
+    Preserve all enums (they can be stripped if not directly referenced)
+  -->
+  <assembly fullname="Assembly-CSharp">
+    <type fullname="*" preserve="nothing">
+      <type signature="System.Enum" preserve="all"/>
+    </type>
+  </assembly>
+  
+</linker>

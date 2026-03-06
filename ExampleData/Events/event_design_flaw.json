@@ -1,0 +1,51 @@
+{
+  "eventId": "event_design_flaw",
+  "displayName": "Design Flaw Discovered",
+  "description": "Testing has revealed a critical flaw in one of your drone designs that could affect performance.",
+  "flavorText": "The prototype test ended with a smoking heap of composite materials. Your lead engineer stares at the wreckage. 'The thermal management system... it's fundamentally flawed.'",
+  "category": "Negative",
+  "baseTriggerChance": 0.06,
+  "cooldownSeconds": 5400,
+  "prerequisiteEvents": [],
+  "blockedByEvents": [],
+  "minimumReputationLevel": 0,
+  "maximumReputationLevel": 100,
+  "isTimed": false,
+  "currencyReward": 0,
+  "researchPointsReward": 0,
+  "reputationReward": 0,
+  "unlocksTechnologies": [],
+  "unlocksDrones": [],
+  "currencyPenalty": 3000,
+  "researchPointsPenalty": 0,
+  "reputationPenalty": 1,
+  "productionDelaySeconds": 900,
+  "locksTechnologies": [],
+  "choices": [
+    {
+      "choiceId": "recall_redesign",
+      "choiceText": "Recall and Redesign",
+      "choiceText outcomeDescription": "Issue a recall and fix the design properly.",
+      "currencyEffect": -5000,
+      "researchPointsEffect": 200,
+      "reputationEffect": 2,
+      "unlocks": [],
+      "triggersEvent": [],
+      "requiredCurrency": 5000,
+      "requiredTechnologies": []
+    },
+    {
+      "choiceId": "patch_workaround",
+      "choiceText": "Implement Workaround",
+      "outcomeDescription": "Apply a quick fix to minimize disruption.",
+      "currencyEffect": -1500,
+      "researchPointsEffect": 0,
+      "reputationEffect": -1,
+      "unlocks": [],
+      "triggersEvent": [],
+      "requiredCurrency": 1500,
+      "requiredTechnologies": []
+    }
+  ],
+  "eventColor": {"r": 1.0, "g": 0.5, "b": 0.2, "a": 1.0}
+}
