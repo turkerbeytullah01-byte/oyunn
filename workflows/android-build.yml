@@ -1,0 +1,110 @@
+name: Android Build - Project Aegis
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+    inputs:
+      buildType:
+        description: 'Build Type'
+        required: true
+        default: 'release'
+        type: choice
+        options:
+        - release
+        - debug
+
+env:
+  UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+  UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+  UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+  BUILD_NAME: ProjectAegisDroneDominion
+  BUILD_VERSION: 1.0.0
+  BUILD_VERSION_CODE: 1
+
+jobs:
+  buildAndroid:
+    name: Build for Android 📱
+    runs-on: ubuntu-latest
+    
+    steps:
+      # Checkout
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+
+      # Cache
+      - name: Cache Library
+        uses: actions/cache@v3
+        with:
+          path: Library
+          key: Library-Android-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
+          restore-keys: |
+            Library-Android-
+            Library-
+
+      # Build
+      - name: Build Android AAB
+        uses: game-ci/unity-builder@v4
+        with:
+          targetPlatform: Android
+          buildMethod: ProjectAegis.Build.BuildScript.BuildAndroidAAB
+          versioning: Semantic
+          androidAppBundle: true
+          androidKeystoreName: projectaegis.keystore
+          androidKeystoreBase64: ${{ secrets.KEYSTORE_BASE64 }}
+          androidKeystorePass: ${{ secrets.KEYSTORE_PASSWORD }}
+          androidKeyaliasName: projectaegis
+          androidKeyaliasPass: ${{ secrets.KEY_PASSWORD }}
+          androidTargetSdkVersion: AndroidApiLevel34
+
+      # Upload AAB
+      - name: Upload AAB
+        uses: actions/upload-artifact@v4
+        with:
+          name: android-aab-${{ env.BUILD_VERSION }}
+          path: build/Android/*.aab
+          retention-days: 30
+
+      # Upload APK (if debug)
+      - name: Upload APK (Debug)
+        if: github.event.inputs.buildType == 'debug'
+        uses: actions/upload-artifact@v4
+        with:
+          name: android-apk-debug-${{ env.BUILD_VERSION }}
+          path: build/Android/*.apk
+          retention-days: 30
+
+      # Create Release
+      - name: Create Release
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        uses: softprops/action-gh-release@v1
+        with:
+          files: build/Android/*.aab
+          tag_name: v${{ env.BUILD_VERSION }}
+          name: Release v${{ env.BUILD_VERSION }}
+          body: |
+            ## Project Aegis: Drone Dominion v${{ env.BUILD_VERSION }}
+            
+            ### Build Bilgileri
+            - **Versiyon**: ${{ env.BUILD_VERSION }}
+            - **Versiyon Kodu**: ${{ env.BUILD_VERSION_CODE }}
+            - **Platform**: Android
+            - **Format**: AAB (Android App Bundle)
+            - **Mimari**: ARM64
+            - **Scripting Backend**: IL2CPP
+            
+            ### Kurulum
+            1. AAB dosyasını indirin
+            2. Google Play Console üzerinden yükleyin VEYA
+            3. [bundletool](https://developer.android.com/studio/command-line/bundletool) kullanarak APK'ya dönüştürün
+            
+            ### Notlar
+            - Minimum Android sürümü: 8.0 (API 26)
+            - Hedef Android sürümü: 14 (API 34)
+            
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
